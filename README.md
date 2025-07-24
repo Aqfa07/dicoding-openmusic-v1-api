@@ -1,45 +1,62 @@
-# OpenMusic API
+# 🎧 OpenMusic API V1
 
-OpenMusic adalah aplikasi pemutar musik open source yang menyediakan musik berlisensi gratis untuk semua orang.
+**OpenMusic** adalah aplikasi pemutar musik open source yang menyediakan musik berlisensi gratis untuk semua orang.  
+Dirancang untuk praktik backend development menggunakan **Node.js**, **Hapi.js**, dan **PostgreSQL**.
 
-## Fitur
+---
 
-- ✅ Manajemen Album (CRUD)
-- ✅ Manajemen Lagu (CRUD)
-- ✅ Validasi Data
-- ✅ Error Handling
-- ✅ Database PostgreSQL
-- ✅ Migrations
-- ✅ Pencarian Lagu (Query Parameter)
-- ✅ Daftar Lagu dalam Album
+## ✨ Fitur Utama
 
-## Instalasi
+- ✅ **Manajemen Album** (CRUD)
+- ✅ **Manajemen Lagu** (CRUD)
+- ✅ **Validasi Data** dengan Joi
+- ✅ **Error Handling** yang konsisten
+- ✅ **Database PostgreSQL** dengan migrasi skema
+- ✅ **Pencarian Lagu** dengan query parameter
+- ✅ **Daftar Lagu dalam Album**
 
-1. Clone repository
-2. Install dependencies: `npm install`
-3. Setup database PostgreSQL
-4. Copy `.env.example` ke `.env` dan sesuaikan konfigurasi
-5. Jalankan migrations: `npm run migrate:up`
-6. Jalankan server: `npm start`
+---
 
-## API Endpoints
+## ⚙️ Instalasi
 
-### Albums
-- `POST /albums` - Menambahkan album
-- `GET /albums/{id}` - Mendapatkan detail album
-- `PUT /albums/{id}` - Mengubah album
-- `DELETE /albums/{id}` - Menghapus album
+1. **Clone repository**
+2. Install dependensi:
+    ```bash
+    npm install
+    ```
+3. Siapkan database PostgreSQL
+4. Salin `.env.example` ke `.env`, lalu sesuaikan konfigurasi
+5. Jalankan migrasi database:
+    ```bash
+    npm run migrate:up
+    ```
+6. Jalankan server:
+    ```bash
+    npm start
+    ```
 
-### Songs
-- `POST /songs` - Menambahkan lagu
-- `GET /songs` - Mendapatkan semua lagu (dengan query parameter)
-- `GET /songs/{id}` - Mendapatkan detail lagu
-- `PUT /songs/{id}` - Mengubah lagu
-- `DELETE /songs/{id}` - Menghapus lagu
+---
 
-## Environment Variables
+## 📡 API Endpoints
 
-\`\`\`
+### 🎼 Albums
+- `POST /albums` - Tambah album baru
+- `GET /albums/{id}` - Lihat detail album + lagu-lagu di dalamnya
+- `PUT /albums/{id}` - Edit album
+- `DELETE /albums/{id}` - Hapus album
+
+### 🎵 Songs
+- `POST /songs` - Tambah lagu baru
+- `GET /songs` - Lihat semua lagu (`?title=` dan `?performer=` untuk filter)
+- `GET /songs/{id}` - Lihat detail lagu
+- `PUT /songs/{id}` - Edit lagu
+- `DELETE /songs/{id}` - Hapus lagu
+
+---
+
+## 🔐 Environment Variables
+
+```
 HOST=localhost
 PORT=5000
 PGUSER=postgres
@@ -47,3 +64,10 @@ PGPASSWORD=your_password
 PGDATABASE=openmusic
 PGHOST=localhost
 PGPORT=5432
+```
+
+---
+
+## 📄 Lisensi
+
+Dibuat sebagai bagian dari **belajar back-end development** di platform **Dicoding Indonesia**.
